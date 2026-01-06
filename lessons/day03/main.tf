@@ -12,17 +12,18 @@ provider "azurerm" {
     features {
       
     }
-  
+  subscription_id = "ca62517a-b533-4891-8cb5-db5528753f34"
 }
 
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
-  location = "West Europe"
+  //location = "West Europe"
+  location = "Central India"
 }
 
 resource "azurerm_storage_account" "example" {
  
-  name                     = "techtutorial101"
+  name                     = "debstorageforazure1"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location # implicit dependency
   account_tier             = "Standard"
